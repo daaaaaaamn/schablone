@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamDemidenko", "ExamDemidenko\ExamDemidenko.csproj", "{6396339B-33CD-4E2A-AF9D-712C8F0C131F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamDemidenkoConsoleApp", "ExamDemidenkoConsoleApp\ExamDemidenkoConsoleApp.csproj", "{317E092D-1ECC-4D67-9B5D-7067147A7EA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6396339B-33CD-4E2A-AF9D-712C8F0C131F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6396339B-33CD-4E2A-AF9D-712C8F0C131F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6396339B-33CD-4E2A-AF9D-712C8F0C131F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6396339B-33CD-4E2A-AF9D-712C8F0C131F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{317E092D-1ECC-4D67-9B5D-7067147A7EA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{317E092D-1ECC-4D67-9B5D-7067147A7EA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{317E092D-1ECC-4D67-9B5D-7067147A7EA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{317E092D-1ECC-4D67-9B5D-7067147A7EA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A10BC02A-8672-4036-884C-BD1FE45108B6}
+	EndGlobalSection
+EndGlobal
