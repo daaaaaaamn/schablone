@@ -6,36 +6,39 @@ using System.Threading.Tasks;
 
 namespace ExamDemidenko
 {
-    public class Person
+    public class User
     {
         // книги данного человека
         public string Name { get; set; }
-        public string Address { get; set; }
-        public List<Book> Library = new List<Book>();
-        public Person(string nm, string ad)
+        public string Role { get; set; }
+        public List<Books> Library = new List<Books>();
+        public User(string nm, string ad)
         {
             Name = nm;
-            Address = ad;
+            Role = ad;
         }
         public void Show()
         {
-            Console.WriteLine($"Человек: имя = {Name}, адрес = {Address}");
+            Console.WriteLine($"Человек: имя = {Name}, роль = {Role}");
         }
     }
     //  класс книг
-    public class Book
+    public class Books
     {
         public string Title { get; set; }
         public string Author { get; set; }
-        public Book(string nm, string avt)
+        public int Count { get; set; }
+        public Books(string nm, string avt, int rub)
         {
             Title = nm;
             Author = avt;
+            Count = rub;
         }
         public void Show()
         {
-            Console.WriteLine(
-                 $"Книга: название = {Title}, автор = {Author}");
+            Console.WriteLine($"Предмет: наименование = {Title}, количество = {Author}, Стоимость {Count}");
         }
     }
+
+    
 }

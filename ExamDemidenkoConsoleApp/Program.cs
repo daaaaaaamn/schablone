@@ -10,20 +10,73 @@ namespace ExamDemidenkoConsoleApp
 {
     internal class Program
     {
+        internal class Library : IComparable<Library>
+        {
+            public string Title { get; set; }
+            public string Author { get; set; }
+            public int Count { get; set; }
+
+            public Library(string mark, string number, int probeg)
+            {
+                Title = mark;
+                Author = number;
+                Count = probeg;
+            }
+
+            public override string ToString()
+            {
+                string s = $"Данные о книге: \n" +
+                           $"- Название: {Title} \n" +
+                           $"- Автор: {Author} \n" +
+                           $"- Стоимость: {Count} Руб.";
+                return s;
+            }
+
+
+            public int CompareTo(Library other)
+            {
+                if (this.Count > other.Count) return 1; // пробег текущего авто больше пробега переданного
+                if (this.Count < other.Count) return -1; // пробег текущего авто меньше пробега переданного
+                else return 0; // пробеги автомобилей равны 
+            }
+        }
         static void Main(string[] args)
         {
-            Person ps = new Person("Иванов П.А.", "г. Москва");
+            User ps = new User("Иванов П.А.", "Администратор");
             ps.Show();
-            Book b1 = new Book("Сказки", "Пушкин А.С.");
+            Books b1 = new Books("Первая книга", "Пушкин", 199);
             ps.Library.Add(b1);
-            Book b2 = new Book("Язык C#", "Григорьев В.С.");
+            Books b2 = new Books("Вторая книга", "Колотушкин", 140);
             ps.Library.Add(b2);
-            foreach (Book b in ps.Library)
+            Books b3 = new Books("Третья книга", "Кукушкин", 390);
+            ps.Library.Add(b3);
+            foreach (Books b in ps.Library)
             {
+
                 b.Show();
             }
+            Console.WriteLine();
+            List<Library> col = new List<Library>();
+            Console.WriteLine("Работа со стандартным интерфейсом");
+            Library book1 = new Library("Первая книга", "Пушкин", 199);
+            col.Add(book1);
+            col.Add(new Library("Вторая книга", "Колотушкин", 140));
+            col.Add(new Library("Третья книга", "Кукушкин", 390));
+            col.Sort();
+            foreach (Library lib in col)
+            {
+                Console.WriteLine();
+                Console.WriteLine(lib.ToString());
+            }
+
             Console.ReadKey();
+
         }
+
+
+
+
+
     }
 
 }
