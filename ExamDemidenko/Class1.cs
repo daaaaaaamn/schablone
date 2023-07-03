@@ -10,24 +10,27 @@ namespace ExamDemidenko
     public class User
     {
         // книги данного человека
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public List<Books> Library = new List<Books>();
-        public User(string username, string userrole)
+        public string FIO { get; set; }
+        public int DATA { get; set; }
+        public string ADRESS { get; set; }
+        public List<Computers> Library = new List<Computers>();
+        public User(string fio, int date, string adress)
         {
-            Name = username;
-            Address = userrole;
+            FIO = fio;
+            DATA = date;
+            ADRESS = adress;
+
         }
         public void Show()
         {
-            Console.WriteLine($"Человек: имя = {Name}, роль = {Address}");
+            Console.WriteLine($"Человек: Marka = {FIO}, God = {DATA}, Speed = {ADRESS}");
         }
-        public List<Books> newList(User user)
+        public List<Computers> newList(User user)
         {
-            List<Books> col = new List<Books>();
-            foreach (Books b in user.Library)
+            List<Computers> col = new List<Computers>();
+            foreach (Computers b in user.Library)
             {
-                Books book1 = new Books(b.Title, b.Author);
+                Computers book1 = new Computers(b.Marka, b.God, b.Speed, b.Value);
                 col.Add(book1);
             }
             return col;
@@ -35,7 +38,7 @@ namespace ExamDemidenko
         public void ShowAll(User ps)
         {
             ps.Show();
-            foreach (Books b in ps.Library)
+            foreach (Computers b in ps.Library)
             {
                 b.Show();
             }
@@ -44,30 +47,36 @@ namespace ExamDemidenko
 
     }
     //  класс книг
-    public class Books : IComparable<Books>
+    public class Computers : IComparable<Computers>
     {
-        public string Title { get; set; }
-        public string Author { get; set; }
-        public Books(string bookname, string bookavtor)
+        public string Marka { get; set; }
+        public int God { get; set; }
+        public int Speed { get; set; }
+        public int Value { get; set; }
+        public Computers(string marka, int god, int speed, int value)
         {
-            Title = bookname;
-            Author = bookavtor;
+            Marka = marka;
+            God = god;
+            Speed = speed;
+            Value = value;
+
         }
         public override string ToString()
         {
-            string s = $"Данные о книге: \n" +
-                       $"- Название: {Title} \n" +
-                       $"- Автор: {Author}";
+            string s = $"Данные о компьютере: \n" +
+                       $"- Марка: {Marka} \n" + 
+                       $"- Год: {God} \n" + 
+                       $"- Скорость: {Speed} \n" +
+                       $"- Объем: {Value}";
             return s;
         }
-        public int CompareTo(Books other)
+        public int CompareTo(Computers other)
         {
-            int result = String.Compare(this.Author, other.Author);
-            if (result < 0)
+            if (this.Value < other.Value)
             {
                 return -1;
             }
-            else if (result > 0)
+            else if (this.Value > other.Value)
             {
                 return 1;
             }
@@ -79,7 +88,7 @@ namespace ExamDemidenko
 
         public void Show()
         {
-            Console.WriteLine($"Предмет: наименование = {Title}, количество = {Author}");
+            Console.WriteLine($"Компьютер: Марка: {Marka}, Год: {God}, Скорость: {Speed}, Объем: {Value}");
         }
     }
 
