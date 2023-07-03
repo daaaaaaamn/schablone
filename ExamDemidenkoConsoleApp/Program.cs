@@ -16,11 +16,11 @@ namespace ExamDemidenkoConsoleApp
             public string Author { get; set; }
             public int Count { get; set; }
 
-            public Library(string mark, string number, int probeg)
+            public Library(string libname, string libavtor, int libcount)
             {
-                Title = mark;
-                Author = number;
-                Count = probeg;
+                Title = libname;
+                Author = libavtor;
+                Count = libcount;
             }
 
             public override string ToString()

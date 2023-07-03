@@ -12,10 +12,10 @@ namespace ExamDemidenko
         public string Name { get; set; }
         public string Role { get; set; }
         public List<Books> Library = new List<Books>();
-        public User(string nm, string ad)
+        public User(string username, string userrole)
         {
-            Name = nm;
-            Role = ad;
+            Name = username;
+            Role = userrole;
         }
         public void Show()
         {
@@ -28,11 +28,11 @@ namespace ExamDemidenko
         public string Title { get; set; }
         public string Author { get; set; }
         public int Count { get; set; }
-        public Books(string nm, string avt, int rub)
+        public Books(string bookname, string bookavtor, int bookcount)
         {
-            Title = nm;
-            Author = avt;
-            Count = rub;
+            Title = bookname;
+            Author = bookavtor;
+            Count = bookcount;
         }
         public void Show()
         {
