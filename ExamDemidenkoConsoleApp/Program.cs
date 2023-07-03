@@ -44,39 +44,28 @@ namespace ExamDemidenkoConsoleApp
         {
             User ps = new User("Иванов П.А.", "Администратор");
             ps.Show();
-            Books b1 = new Books("Первая книга", "Пушкин", 199);
+            Books b1 = new Books("Первая книга", "Пушкин", 500);
             ps.Library.Add(b1);
             Books b2 = new Books("Вторая книга", "Колотушкин", 140);
             ps.Library.Add(b2);
             Books b3 = new Books("Третья книга", "Кукушкин", 390);
             ps.Library.Add(b3);
-            foreach (Books b in ps.Library)
-            {
-
-                b.Show();
-            }
-            Console.WriteLine();
             List<Library> col = new List<Library>();
             Console.WriteLine("Работа со стандартным интерфейсом");
-            Library book1 = new Library("Первая книга", "Пушкин", 199);
-            col.Add(book1);
-            col.Add(new Library("Вторая книга", "Колотушкин", 140));
-            col.Add(new Library("Третья книга", "Кукушкин", 390));
+            foreach (Books b in ps.Library)
+            {
+                b.Show();
+                Library book1 = new Library(b.Title, b.Author, b.Count);
+                col.Add(book1);
+            }
             col.Sort();
             foreach (Library lib in col)
             {
                 Console.WriteLine();
                 Console.WriteLine(lib.ToString());
             }
-
+            Console.WriteLine();
             Console.ReadKey();
-
         }
-
-
-
-
-
     }
-
 }
